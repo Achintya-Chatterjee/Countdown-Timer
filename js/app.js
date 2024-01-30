@@ -1,4 +1,4 @@
-const endDate = "30 April 2024 2:05 PM";
+const endDate = "30 January 2024 7:58 AM";
 
 document.getElementById("end-date").innerText = endDate;
 const inputs = document.querySelectorAll("input");
@@ -10,6 +10,8 @@ function clock() {
   const end = new Date(endDate);
   const now = new Date();
   const diff = (end - now) / 1000;
+
+  if (diff < 0) return;
   //convert into days
   inputs[0].value = Math.floor(diff / 3600 / 24);
   //convert into hours
